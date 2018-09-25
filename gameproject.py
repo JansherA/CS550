@@ -106,7 +106,7 @@ def holethree():
 		#I'm calling the function before it is created
 def holefour():
 	#Now I'm finally defining the function
-	fourhole = input("\n\nYou aren't doing as bad as I suspected. This hole will turn that around. A medium par 4 with several obstacles. No easy way out this time! Your two options from the tee are \n\nA. Hit a draw around the tree for a good set up or B. Hit a fade to the other side of the fairway for a longer yet straighter second shot. \n\nType A or B: \n\n ")
+	fourhole = input("\n\nYou aren't doing as bad as I suspected. This hole will turn that around. A medium par 4 with several obstacles. No easy way out this time! Your two options from the tee are \n\nA. Hit a draw around the tree for a good set up or \n\nB. Hit a fade to the other side of the fairway for a longer yet straighter second shot. \n\nType A or B: \n\n ")
 	while fourhole != "A" or "B":
 		print("You didn't type A or B! (Mrs. Healey stop it I need a good grade) Try again please.")
 		fourhole = input("\n\nYou aren't doing as bad as I suspected. This hole will turn that around. A medium par 4 with several obstacles. No easy way out this time! Your two options from the tee are \n\nA. Hit a draw around the tree for a good set up or B. Hit a fade to the other side of the fairway for a longer yet straighter second shot. \n\nType A or B: \n\n ")
