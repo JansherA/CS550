@@ -59,7 +59,7 @@ def holetwo():
 			holethree()
 		else:
 			holetwoshottwo = input("Ouch! You failed to clear the water. After dropping your ball, the two options are to \n\nA. Lay up again to the green for a good chance of a 5 or \n\nB. Go for it again for a low chance of a 4. ")
-			while holeoneshottwo != "A" or "B":
+			while holetwoshottwo != "A" or "B":
 				print("You didn't type A or B! (Mrs. Healey stop it I need a good grade) Try again please.")
 				holetwoshottwo = input("Ouch! You failed to clear the water and instead have a penalty of +2. After dropping your ball, the two options are to \n\nA. Lay up again to the green for a good chance of a 5 or \n\nB. Go for it again for a low chance of a 4. ")
 				break
@@ -140,5 +140,8 @@ def clubhouse():
 
 #And alas, I'm calling the initial function to execute. I don't need to call the other ones since they naturally are called after each option
 holeone()
+clubhouse()
+
+
 
 
