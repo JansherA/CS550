@@ -3,36 +3,40 @@ import sys
 class bcolors:
 	OKBLUE = '\033[94m'
 	FAIL = '\033[91m'
-row = int(sys.argv[1]) + 2
-columns = int(sys.argv[2]) + 2
-bombs = int(sys.argv[3])
-myboard = [[0]*columns for i in range(row)]
-def board():
-	print(bcolors.FAIL+"Minesweeper Board: \n")
-	# print(*myboard, sep='\n')
-for i in range(bombs):
-	down = random.randint(1,row-2)
-	over = random.randrange(1,columns-2)
-	while myboard[down][over] is "*":
-		myboard = [[0]*columns for i in range(row)]
-	myboard[down][over] = "*"
-	if myboard[down][over-1] is not "*":
-		myboard[down][over-1] += 1
-	if myboard[down][over+1] is not "*":
-		myboard[down][over+1] += 1
-	if myboard[down-1][over] is not "*":
-		myboard[down-1][over] += 1
-	if myboard[down+1][over] is not "*":
-		myboard[down+1][over] += 1
-	if myboard[down-1][over-1] is not "*":
-		myboard[down-1][over-1] += 1
-	if myboard[down-1][over+1] is not "*":
-		myboard[down-1][over+1] += 1
-	if myboard[down+1][over+1] is not "*":
-		myboard[down+1][over+1] += 1
-	if myboard[down+1][over-1] is not "*":
-		myboard[down+1][over-1] += 1
-if __name__ == '__main__':
-	board()
-for j in myboard[1:-1]:
-	print(*j[1:-1])
+print(bcolors.FAIL+"Minesweeper Board:")
+def increase_around_bombs(r,c,board):
+	for y in range(r-1, r+2):
+		for x in range(c-1, c+2):
+			if (board[y][x] is not "*"):
+				board[y][x] += 1
+def add_mines(board):
+	for i in range(mines):
+		x = random.randint(1,height-2)
+		y = random.randint(1,width-2)
+		while board[x][y] == '*':
+			x = random.randint(1,height-2)
+			y = random.randint(1,width-2)
+		board[x][y] = '*'
+		increase_around_bombs(x,y,board)
+def print_board(board):
+	for i in board[1:-1]:
+		print(*i[1:-1])
+height = int(sys.argv[1])+2
+width = int(sys.argv[2])+2
+mines = int(sys.argv[3])
+solution = [[0]*width for i in range(height)]
+add_mines(solution)
+print_board(solution)
+# coordinate = str(input(bcolors.OKBLUE+"What point do you want to reveal?")).split(',')
+print(*coordinate)
+hi = [["∆"]*width for x in range(height)]
+
+
+a = int(input("Height:")) + 1
+b = int(input("Width:")) + 1
+for x in range(height):
+	for y in range(width):
+		if board[a][b] == "*":
+			hi[x][y] == board[x][y]
+	
+print(hi[a][b],end=" ")
