@@ -1,3 +1,9 @@
+#Minesweeper Game
+#Jansher Azmat
+#No Sources
+#On my honor, I have neither given nor received unauthorized aid
+
+
 import random
 import sys
 
@@ -76,4 +82,3 @@ while finished == False:
 # 			hi[x][y] == solution[x][y]
 	
 # print(hi[a][b],end=" ")
-
